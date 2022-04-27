@@ -54,7 +54,7 @@
 
 ;;; Code:
 
-(require 'tex-buf)
+(require 'tex)
 (require 'latex)
 
 (defgroup auctex-latexmk nil
@@ -106,7 +106,7 @@
                     (t "")))))
   (setq-default TeX-command-list
                 (cons
-                 '("LatexMk" "latexmk %(-PDF)%S%(mode) %(file-line-error) %(extraopts) %t" TeX-run-latexmk nil
+                 '("LatexMk" "latexmk %(-PDF)%S%(mode) %(file-line-error) %(extraopts) %(output-dir) %t" TeX-run-latexmk nil
                    (plain-tex-mode latex-mode doctex-mode) :help "Run LatexMk")
                  TeX-command-list)
                 LaTeX-clean-intermediate-suffixes
